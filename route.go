@@ -7,8 +7,8 @@ import (
 )
 
 func init() {
-	mux = append(mux, WebController{HandlerFunc: wxApiGet, Method: http.MethodGet, Pattern: "/wxapi"})
-	mux = append(mux, WebController{HandlerFunc: wxApiPost, Method: http.MethodPost, Pattern: "/wxapi"})
+	mux = append(mux, WebController{HandlerFunc: logger(wxApiGet), Method: http.MethodGet, Pattern: "/wxapi"})
+	mux = append(mux, WebController{HandlerFunc: logger(wxApiPost), Method: http.MethodPost, Pattern: "/wxapi"})
 }
 
 // 控制器
